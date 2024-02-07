@@ -1,0 +1,62 @@
+Projekt-Entwurf
+Das Projekt besteht aus einem 2d Spiel welches einen Charakter
+enthält. Dieser bricht aus seinem Gefängniss aus und muss dabei
+Gegner Besiegen. Und den Großen Wächter am ende des Gefängnisses
+auf Essen.
+    Charakter
+    Der Charakter ist ein Monster welches forallem durch beißen
+    Kämmpft.
+        Angriffe
+        Es gibt 2 arten von Angriffen beißen und Essen.
+        Beißen 
+        Ein standart biss der eine bestimmte anzahl widerholt 
+        werden kann. Danach muss das Monster eine Pause machen.
+        Essen 
+        Ist eine Gegner weichgebissen kann dieser gegessen werden
+        um sich zu heilen.
+    Gegner
+    Es gibt 3 arten von Gegnern.
+        Grunt
+        Ein Schläger der auf dem Boden läuft und versucht den
+        Spieler zu schlagen.
+        Shooter
+        Ein Schlälger mit einer pistole er läuft auf dem Boden
+        und versucht den Spieler abzuschießen.
+        Flyer
+        Eine Drohne die den Grunt und den Shooter hin und wieder
+        Heilt.
+    Gefängniss
+    Das Gefängniss besteht aus 5 räumen 3 dafon werden mit 
+    den 3 gegner sorten gefüllt sein. Während ein Raum den 
+    Wächter entällt. Ein Raum wird eine Platform chalange 
+    welche der Charakter überwältigen muss.
+
+Technische Details
+Sprache
+Das Projekt wird in C++ geschrieben.
+
+ECS
+Eine ESC implementation durchführen
+    Entity
+    Jedes Objekt im Spiel
+    Component
+    Eigenschaften die einer Entity zugewiesen werden.
+    Componenten sind pure daten.
+    Systems
+    Code/Logik welche die verhalten im Spiel steuern.
+
+Basis Architektur
+Siehe Tab hireachie für Priorität
+    Scene
+    Scenen in denen Gameplay drastisch anders ist.
+        Systems
+        Entity-Manager
+            Entity
+                Component
+Arbeitsaufträge
+    Grundlage
+        Fenster
+        Es muss ein Fenster erstellt werden in dem Bilder
+        gezeichnet werden können.
+        Input
+        Es müssen die eingaben des Nutzers regestriert werden.
