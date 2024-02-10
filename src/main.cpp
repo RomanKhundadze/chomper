@@ -1,25 +1,28 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/VideoMode.hpp>
 
-int main(int argc, char *argv[]) {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+void run() {
+    const int wWidth = 1280;
+    const int wHight = 720;
+    sf::RenderWindow window(sf::VideoMode(wWidth, wHight), "chomper");
+    window.setFramerateLimit(60);
 
+    sf::Clock deltaClock;
+    const double timestep = 0.002;
+    double accumulator = 0.0;
+
+    // Frame based update
     while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
+        accumulator += deltaClock.restart().asSeconds();
+
+        // Fixed timestep update
+        while (accumulator >= timestep) {
+            accumulator -= timestep;
         }
 
         window.clear();
-        window.draw(shape);
+        // window.draw();
         window.display();
     }
-    return 0;
 }
+
+int main(int argc, char *argv[]) { run(); }
