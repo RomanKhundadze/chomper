@@ -24,6 +24,23 @@ bool vector2::operator!=(const vector2 &vector) const {
     return (x != vector.x) || (y != vector.y);
 }
 
+void vector2::operator+=(const vector2 &vector) {
+    x += vector.x;
+    y += vector.y;
+}
+void vector2::operator-=(const vector2 &vector) {
+    x -= vector.x;
+    y -= vector.y;
+}
+void vector2::operator*=(const float value) {
+    x *= value;
+    y *= value;
+}
+void vector2::operator/=(const float value) {
+    x /= value;
+    y /= value;
+}
+
 float vector2::magnitude() const { return sqrt((x * x) + (y * y)); }
 float vector2::dist(const vector2 &vector) const {
     return (*this - vector).magnitude();

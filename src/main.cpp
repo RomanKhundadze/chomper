@@ -1,4 +1,6 @@
+#include "2Dvector.h"
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 void run() {
     const int wWidth = 1280;
@@ -25,4 +27,9 @@ void run() {
     }
 }
 
-int main(int argc, char *argv[]) { run(); }
+int main(int argc, char *argv[]) {
+    // run();
+    vector2 vec1 = vector2(100, 100);
+    vector2 vec2 = vector2(100, 100);
+    std::cout << vec1.y << vec1.x << "\n";
+}
